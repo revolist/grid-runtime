@@ -1,0 +1,61 @@
+{
+  "name": "@revolist/grid-runtime",
+  "version": "4.0.9",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "main": "./dist/grid-runtime.umd.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/grid-runtime.umd.cjs"
+    },
+    "./observable-props.internal": {
+      "types": "./dist/observable-props.internal.d.ts",
+      "import": "./dist/observable-props.internal.js",
+      "require": "./dist/grid-runtime.umd.cjs"
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "node scripts/lint.mjs",
+    "test": "vitest run",
+    "lint:types": "tsc -p tsconfig.json --noEmit",
+    "lint:eslint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "peerDependencies": {
+    "@revolist/revogrid": "^4.31.4"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.4",
+    "happy-dom": "^21.0.4",
+    "eslint": "^10.1.0",
+    "typescript-eslint": "^8.58.0",
+    "prettier": "3.8.3",
+    "vite": "8.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/revolist/grid-runtime.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "module": "./dist/index.js",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24.15.0",
+    "pnpm": ">=11.25.0 <12"
+  }
+}
